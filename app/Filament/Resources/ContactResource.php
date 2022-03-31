@@ -33,7 +33,10 @@ class ContactResource extends Resource
                 Forms\Components\TextInput::make('address')->required(),
                 Forms\Components\TextInput::make('city')->required(),
                 Forms\Components\TextInput::make('region')->label('County')->required(),
-                Forms\Components\TextInput::make('country')->required(),
+                Forms\Components\Select::make('country')->options([
+                    'UK' => 'United Kingdom',
+                    'US' => 'United States',
+                ])->required(),
                 Forms\Components\TextInput::make('postal_code')->label('Postcode')->required(),
             ]);
     }
